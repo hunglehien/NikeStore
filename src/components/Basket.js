@@ -5,7 +5,7 @@ export default function Basket() {
     const [, cartItems, onAdd, onRemove] = useContext(ThemeContext)
     const itemsPrice = cartItems.reduce((a, c) => a + c.count * c.price, 0)
     const totalPrice = itemsPrice
-    
+    console.log(cartItems)
   return (
     <div className="card">
         <div className="card-top">

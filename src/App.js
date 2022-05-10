@@ -6,15 +6,16 @@ import Main from './components/Main'
 
 
 export const ThemeContext = createContext()
-const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart"))
+// const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart"))
 
 function App() {
   const { products } = data
-  const [cartItems, setCartItems] = useState(cartFromLocalStorage);
-  const buttonElement = useRef()
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems))
-  })
+  const [cartItems, setCartItems] = useState([]);
+  // const [cartItems, setCartItems] = useState(cartFromLocalStorage);
+  // const buttonElement = useRef()
+  // useEffect(() => {
+  //   localStorage.setItem("cart", JSON.stringify(cartItems))
+  // })
 
   
 
@@ -49,7 +50,7 @@ function App() {
   };
 
   return (
-    <ThemeContext.Provider value={ [products, cartItems, onAdd, onRemove, buttonElement] }>
+    <ThemeContext.Provider value={ [products, cartItems, onAdd, onRemove] }>
       
       <Main />
       

@@ -2,7 +2,7 @@ import {useContext} from 'react'
 import {ThemeContext} from '../App'
 
 export default function ShopItem() {
-    const [products, ,onAdd, , buttonElement]  = useContext(ThemeContext)
+    const [products, ,onAdd, ]  = useContext(ThemeContext)
     
   return (
     
@@ -30,7 +30,7 @@ export default function ShopItem() {
           <div className="shop-item-bottom">
             <div className="shop-item-price">${item.price}</div>
             <div 
-            ref = {buttonElement}
+            
             className="shop-item-button"
             onClick={() => onAdd(item)}
             data-item-id={item.id}><p>ADD TO CART</p></div>
